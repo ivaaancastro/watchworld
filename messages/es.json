@@ -1,0 +1,124 @@
+{
+  "common": {
+    "appName": "WatchWorld",
+    "tagline": "Tu universo de la relojería",
+    "search": "Buscar relojes, marcas, referencias...",
+    "viewAll": "Ver todos",
+    "learnMore": "Saber más",
+    "addToCollection": "Añadir a colección",
+    "addToWishlist": "Añadir a wishlist",
+    "compare": "Comparar",
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "notFound": "No encontrado",
+    "back": "Volver"
+  },
+  "nav": {
+    "catalog": "Catálogo",
+    "brands": "Marcas",
+    "compare": "Comparar",
+    "market": "Mercado",
+    "guides": "Guías",
+    "myCollection": "Mi Colección",
+    "signIn": "Iniciar sesión",
+    "signOut": "Cerrar sesión"
+  },
+  "home": {
+    "hero": {
+      "title": "Descubre el mundo de los relojes",
+      "subtitle": "Desde el primer reloj hasta la pieza más exclusiva — todo el conocimiento que necesitas en un solo lugar.",
+      "cta": "Explorar catálogo",
+      "ctaGuides": "Guías para empezar"
+    },
+    "byBudget": {
+      "title": "Encuentra tu reloj por presupuesto",
+      "entry": "Entrada al mundo",
+      "mid": "Gama media",
+      "high": "Alta relojería",
+      "luxury": "Lujo extremo",
+      "entryRange": "Hasta €500",
+      "midRange": "€500 – €2.000",
+      "highRange": "€2.000 – €10.000",
+      "luxuryRange": "Más de €10.000"
+    },
+    "featuredBrands": "Marcas destacadas",
+    "trending": "Tendencia ahora",
+    "newToWatches": "¿Nuevo en el mundo de los relojes?",
+    "newToWatchesCta": "Comienza aquí"
+  },
+  "catalog": {
+    "title": "Catálogo de Relojes",
+    "subtitle": "Explora nuestra base de datos de referencias",
+    "filters": {
+      "brand": "Marca",
+      "priceRange": "Precio",
+      "movement": "Movimiento",
+      "caseMaterial": "Material caja",
+      "complications": "Complicaciones",
+      "diameter": "Diámetro (mm)",
+      "year": "Año",
+      "clearAll": "Limpiar filtros"
+    },
+    "sort": {
+      "label": "Ordenar por",
+      "priceAsc": "Precio: menor a mayor",
+      "priceDesc": "Precio: mayor a menor",
+      "yearDesc": "Más reciente",
+      "yearAsc": "Más antiguo",
+      "nameAsc": "Nombre A-Z"
+    },
+    "noResults": "No se encontraron relojes con estos filtros",
+    "resultsCount": "{count} referencias encontradas"
+  },
+  "watch": {
+    "specs": "Especificaciones",
+    "movement": "Movimiento",
+    "case": "Caja",
+    "dial": "Esfera",
+    "strapBracelet": "Correa / Brazalete",
+    "waterResistance": "Resistencia al agua",
+    "powerReserve": "Reserva de marcha",
+    "frequency": "Frecuencia",
+    "jewels": "Rubíes",
+    "retailPrice": "Precio boutique",
+    "marketPrice": "Precio mercado",
+    "priceHistory": "Histórico de precios",
+    "complications": "Complicaciones",
+    "similarWatches": "Relojes similares",
+    "reviews": "Opiniones",
+    "writeReview": "Escribir opinión",
+    "discontinued": "Discontinuado"
+  },
+  "movements": {
+    "AUTOMATIC": "Automático",
+    "MANUAL": "Manual",
+    "QUARTZ": "Cuarzo",
+    "SOLAR": "Solar",
+    "KINETIC": "Kinético",
+    "SMARTWATCH": "Smartwatch"
+  },
+  "conditions": {
+    "NEW": "Nuevo",
+    "EXCELLENT": "Excelente",
+    "VERY_GOOD": "Muy bueno",
+    "GOOD": "Bueno",
+    "FAIR": "Aceptable"
+  },
+  "collection": {
+    "title": "Mi Colección",
+    "empty": "Tu colección está vacía",
+    "emptyCta": "Explorar el catálogo",
+    "totalValue": "Valor total estimado",
+    "purchaseValue": "Valor de compra",
+    "gainLoss": "Ganancia / Pérdida",
+    "addWatch": "Añadir reloj",
+    "wishlist": "Lista de deseos"
+  },
+  "guides": {
+    "title": "Guías de Relojería",
+    "subtitle": "Todo lo que necesitas saber para empezar",
+    "forBeginners": "Para principiantes",
+    "intermediate": "Nivel intermedio",
+    "advanced": "Avanzado"
+  }
+}
