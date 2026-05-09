@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { LanguageSwitcher } from "./language-switcher";
+import { ThemeToggle } from "./theme-toggle";
 import { Watch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -43,6 +44,7 @@ export function Navbar() {
             {/* Search goes here */}
           </div>
           <nav className="flex items-center gap-2">
+            <ThemeToggle />
             <LanguageSwitcher />
             <Button variant="outline" className="hidden sm:flex border-primary/20 text-primary hover:bg-primary/10">
               {t("signIn")}

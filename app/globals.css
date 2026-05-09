@@ -41,33 +41,58 @@
   --radius-sm: calc(var(--radius) - 4px);
 }
 
-/* Base layer variables - forced dark theme aesthetics */
+/* Base layer variables - Light Mode (Warm/Cream/Brown) */
 @layer base {
   :root {
-    --background: #09090b; /* zinc-950 */
-    --foreground: #fafafa; /* zinc-50 */
-    --card: #18181b; /* zinc-900 */
-    --card-foreground: #fafafa;
-    --popover: #18181b;
-    --popover-foreground: #fafafa;
+    --background: #faf8f5;
+    --foreground: #453528;
+    --card: #ffffff;
+    --card-foreground: #453528;
+    --popover: #ffffff;
+    --popover-foreground: #453528;
     
-    /* Golden luxury accent - Amber 500 equivalent */
-    --primary: #f59e0b; 
-    --primary-foreground: #18181b;
+    /* Luxury leather brown */
+    --primary: #8b5e34;
+    --primary-foreground: #ffffff;
     
-    --secondary: #27272a; /* zinc-800 */
-    --secondary-foreground: #fafafa;
-    --muted: #27272a;
-    --muted-foreground: #a1a1aa; /* zinc-400 */
-    --accent: #27272a;
-    --accent-foreground: #fafafa;
+    --secondary: #eaddcf;
+    --secondary-foreground: #5e4026;
+    --muted: #f3eee8;
+    --muted-foreground: #8b7355;
+    --accent: #eaddcf;
+    --accent-foreground: #453528;
     --destructive: #ef4444;
-    --destructive-foreground: #fafafa;
-    --border: #27272a;
-    --input: #27272a;
-    --ring: #f59e0b;
+    --destructive-foreground: #ffffff;
+    --border: #e6d5c3;
+    --input: #e6d5c3;
+    --ring: #8b5e34;
     
     --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #1f1a17; /* Espresso dark */
+    --foreground: #f3eee8;
+    --card: #2a2420;
+    --card-foreground: #f3eee8;
+    --popover: #2a2420;
+    --popover-foreground: #f3eee8;
+    
+    /* Light saddle brown / goldish accent */
+    --primary: #d4a373;
+    --primary-foreground: #1f1a17;
+    
+    --secondary: #40332a;
+    --secondary-foreground: #f3eee8;
+    --muted: #40332a;
+    --muted-foreground: #a89b8d;
+    --accent: #40332a;
+    --accent-foreground: #f3eee8;
+    --destructive: #ef4444;
+    --destructive-foreground: #f3eee8;
+    --border: #40332a;
+    --input: #40332a;
+    --ring: #d4a373;
   }
 }
 
@@ -77,6 +102,5 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    color-scheme: dark;
   }
 }
