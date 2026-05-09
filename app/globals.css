@@ -44,55 +44,56 @@
 /* Base layer variables - Light Mode (Warm/Cream/Brown) */
 @layer base {
   :root {
-    --background: #faf8f5;
-    --foreground: #453528;
+    --background: #fbf9f6;
+    --foreground: #1c1917; /* stone-900 */
     --card: #ffffff;
-    --card-foreground: #453528;
+    --card-foreground: #1c1917;
     --popover: #ffffff;
-    --popover-foreground: #453528;
+    --popover-foreground: #1c1917;
     
-    /* Luxury leather brown */
-    --primary: #8b5e34;
+    /* Luxury gold/sand */
+    --primary: #b8905b;
     --primary-foreground: #ffffff;
     
-    --secondary: #eaddcf;
-    --secondary-foreground: #5e4026;
-    --muted: #f3eee8;
-    --muted-foreground: #8b7355;
-    --accent: #eaddcf;
-    --accent-foreground: #453528;
+    --secondary: #f5f0e6;
+    --secondary-foreground: #3e3325;
+    --muted: #f5f0e6;
+    --muted-foreground: #78716c; /* stone-500 */
+    --accent: #f5f0e6;
+    --accent-foreground: #1c1917;
     --destructive: #ef4444;
     --destructive-foreground: #ffffff;
-    --border: #e6d5c3;
-    --input: #e6d5c3;
-    --ring: #8b5e34;
+    --border: #e7e5e4; /* stone-200 */
+    --input: #e7e5e4;
+    --ring: #b8905b;
     
-    --radius: 0.5rem;
+    --radius: 1rem; /* Apple-style rounded corners */
   }
 
   .dark {
-    --background: #1f1a17; /* Espresso dark */
-    --foreground: #f3eee8;
-    --card: #2a2420;
-    --card-foreground: #f3eee8;
-    --popover: #2a2420;
-    --popover-foreground: #f3eee8;
+    /* Apple style deep dark with subtle warm tint */
+    --background: #110f0d; 
+    --foreground: #fafaf9; /* stone-50 */
+    --card: #171513;
+    --card-foreground: #fafaf9;
+    --popover: #171513;
+    --popover-foreground: #fafaf9;
     
-    /* Light saddle brown / goldish accent */
-    --primary: #d4a373;
-    --primary-foreground: #1f1a17;
+    /* Elegant soft gold */
+    --primary: #cba876;
+    --primary-foreground: #110f0d;
     
-    --secondary: #40332a;
-    --secondary-foreground: #f3eee8;
-    --muted: #40332a;
-    --muted-foreground: #a89b8d;
-    --accent: #40332a;
-    --accent-foreground: #f3eee8;
-    --destructive: #ef4444;
-    --destructive-foreground: #f3eee8;
-    --border: #40332a;
-    --input: #40332a;
-    --ring: #d4a373;
+    --secondary: #24201c;
+    --secondary-foreground: #fafaf9;
+    --muted: #24201c;
+    --muted-foreground: #a8a29e; /* stone-400 */
+    --accent: #24201c;
+    --accent-foreground: #fafaf9;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #fafaf9;
+    --border: #292524; /* stone-800 */
+    --input: #292524;
+    --ring: #cba876;
   }
 }
 

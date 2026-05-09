@@ -59,9 +59,9 @@ export function FiltersSidebar({ brands, complications, currentLocale }: FilterS
   const maxPrice = searchParams.get("maxPrice") || "";
 
   return (
-    <aside className="w-full lg:w-64 shrink-0 space-y-6">
+    <aside className="w-full lg:w-64 shrink-0 space-y-8">
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold tracking-tight">{t("brand")}</h3>
+        <h3 className="text-xl font-semibold tracking-tight">{t("brand")}</h3>
         {(activeBrands.length > 0 || activeComplications.length > 0 || minPrice || maxPrice) && (
           <Button variant="ghost" size="sm" onClick={handleClearAll} className="h-auto p-0 text-xs text-muted-foreground hover:text-primary">
             {t("clearAll")}
@@ -69,99 +69,93 @@ export function FiltersSidebar({ brands, complications, currentLocale }: FilterS
         )}
       </div>
       
-      <Accordion type="multiple" defaultValue={["brands", "price", "complications"]} className="w-full">
+      <div className="space-y-8">
         {/* BRANDS */}
-        <AccordionItem value="brands" className="border-border/40">
-          <AccordionTrigger className="text-sm py-3 hover:no-underline hover:text-primary">
-            {t("brand")}
-          </AccordionTrigger>
-          <AccordionContent>
-            <ScrollArea className="h-[200px] pr-4">
-              <div className="space-y-3 pt-1">
-                {brands.map((brand) => (
-                  <div key={brand.slug} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`brand-${brand.slug}`}
-                      checked={activeBrands.includes(brand.slug)}
-                      onCheckedChange={(checked) => {
-                        const newBrands = checked
-                          ? [...activeBrands, brand.slug]
-                          : activeBrands.filter((b) => b !== brand.slug);
-                        updateQueryParams("brands", newBrands);
-                      }}
-                    />
-                    <label
-                      htmlFor={`brand-${brand.slug}`}
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      {brand.name}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
-          </AccordionContent>
-        </AccordionItem>
+        <div className="space-y-4">
+          <h4 className="text-sm font-medium text-foreground/80 tracking-wide uppercase">{t("brand")}</h4>
+          <ScrollArea className="h-[200px] pr-4">
+            <div className="space-y-3 pt-1">
+              {brands.map((brand) => (
+                <div key={brand.slug} className="flex items-center space-x-3">
+                  <Checkbox
+                    id={`brand-${brand.slug}`}
+                    checked={activeBrands.includes(brand.slug)}
+                    className="rounded-[4px]"
+                    onCheckedChange={(checked) => {
+                      const newBrands = checked
+                        ? [...activeBrands, brand.slug]
+                        : activeBrands.filter((b) => b !== brand.slug);
+                      updateQueryParams("brands", newBrands);
+                    }}
+                  />
+                  <label
+                    htmlFor={`brand-${brand.slug}`}
+                    className="text-sm font-medium text-foreground/90 leading-none cursor-pointer"
+                  >
+                    {brand.name}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+
+        <Separator className="bg-border/50" />
 
         {/* PRICE */}
-        <AccordionItem value="price" className="border-border/40">
-          <AccordionTrigger className="text-sm py-3 hover:no-underline hover:text-primary">
-            {t("priceRange")}
-          </AccordionTrigger>
-          <AccordionContent>
-            <div className="flex items-center gap-2 pt-1 pb-2">
-              <Input
-                type="number"
-                placeholder="Min €"
-                value={minPrice}
-                onChange={(e) => handlePriceChange("min", e.target.value)}
-                className="h-8 text-xs bg-muted/30"
-              />
-              <span className="text-muted-foreground">-</span>
-              <Input
-                type="number"
-                placeholder="Max €"
-                value={maxPrice}
-                onChange={(e) => handlePriceChange("max", e.target.value)}
-                className="h-8 text-xs bg-muted/30"
-              />
-            </div>
-          </AccordionContent>
-        </AccordionItem>
+        <div className="space-y-4">
+          <h4 className="text-sm font-medium text-foreground/80 tracking-wide uppercase">{t("priceRange")}</h4>
+          <div className="flex items-center gap-3">
+            <Input
+              type="number"
+              placeholder="Min €"
+              value={minPrice}
+              onChange={(e) => handlePriceChange("min", e.target.value)}
+              className="h-10 text-sm bg-secondary/30 border-none rounded-lg"
+            />
+            <span className="text-muted-foreground/50">-</span>
+            <Input
+              type="number"
+              placeholder="Max €"
+              value={maxPrice}
+              onChange={(e) => handlePriceChange("max", e.target.value)}
+              className="h-10 text-sm bg-secondary/30 border-none rounded-lg"
+            />
+          </div>
+        </div>
+
+        <Separator className="bg-border/50" />
 
         {/* COMPLICATIONS */}
-        <AccordionItem value="complications" className="border-b-0">
-          <AccordionTrigger className="text-sm py-3 hover:no-underline hover:text-primary">
-            {t("complications")}
-          </AccordionTrigger>
-          <AccordionContent>
-            <ScrollArea className="h-[200px] pr-4">
-              <div className="space-y-3 pt-1">
-                {complications.map((comp) => (
-                  <div key={comp.slug} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`comp-${comp.slug}`}
-                      checked={activeComplications.includes(comp.slug)}
-                      onCheckedChange={(checked) => {
-                        const newComps = checked
-                          ? [...activeComplications, comp.slug]
-                          : activeComplications.filter((c) => c !== comp.slug);
-                        updateQueryParams("complications", newComps);
-                      }}
-                    />
-                    <label
-                      htmlFor={`comp-${comp.slug}`}
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      {currentLocale === "es" ? comp.nameEs : comp.nameEn}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+        <div className="space-y-4">
+          <h4 className="text-sm font-medium text-foreground/80 tracking-wide uppercase">{t("complications")}</h4>
+          <ScrollArea className="h-[200px] pr-4">
+            <div className="space-y-3 pt-1">
+              {complications.map((comp) => (
+                <div key={comp.slug} className="flex items-center space-x-3">
+                  <Checkbox
+                    id={`comp-${comp.slug}`}
+                    checked={activeComplications.includes(comp.slug)}
+                    className="rounded-[4px]"
+                    onCheckedChange={(checked) => {
+                      const newComps = checked
+                        ? [...activeComplications, comp.slug]
+                        : activeComplications.filter((c) => c !== comp.slug);
+                      updateQueryParams("complications", newComps);
+                    }}
+                  />
+                  <label
+                    htmlFor={`comp-${comp.slug}`}
+                    className="text-sm font-medium text-foreground/90 leading-none cursor-pointer"
+                  >
+                    {currentLocale === "es" ? comp.nameEs : comp.nameEn}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+      </div>
     </aside>
   );
 }

@@ -81,13 +81,13 @@ export default async function CatalogPage({ params, searchParams }: PageProps) {
   ]);
 
   return (
-    <div className="container mx-auto px-4 sm:px-8 py-8 md:py-12 flex-1">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight">{t("title")}</h1>
-        <p className="text-muted-foreground mt-2">{t("subtitle")}</p>
+    <div className="container mx-auto px-4 sm:px-8 py-10 md:py-16 flex-1">
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">{t("title")}</h1>
+        <p className="text-lg text-muted-foreground mt-3 font-medium">{t("subtitle")}</p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8 items-start">
+      <div className="flex flex-col lg:flex-row gap-12 xl:gap-16 items-start">
         {/* Sidebar Filters */}
         <FiltersSidebar 
           brands={allBrands} 
@@ -96,20 +96,20 @@ export default async function CatalogPage({ params, searchParams }: PageProps) {
         />
 
         {/* Main Content */}
-        <div className="flex-1 w-full space-y-6">
-          <div className="flex items-center justify-between">
-            <p className="text-sm text-muted-foreground">
+        <div className="flex-1 w-full space-y-8">
+          <div className="flex items-center justify-between pb-4 border-b border-border/40">
+            <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
               {t("resultsCount", { count: watches.length })}
             </p>
             {/* Sorting could go here */}
           </div>
 
           {watches.length === 0 ? (
-            <div className="flex flex-col items-center justify-center p-12 border border-dashed rounded-lg bg-card/50 text-center">
-              <h3 className="text-lg font-semibold">{t("noResults")}</h3>
+            <div className="flex flex-col items-center justify-center p-16 rounded-2xl bg-secondary/20 text-center">
+              <h3 className="text-xl font-semibold text-foreground/80">{t("noResults")}</h3>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
               {watches.map((watch) => (
                 <WatchCard key={watch.id} watch={watch} />
               ))}
