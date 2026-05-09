@@ -65,6 +65,10 @@ export default async function CatalogPage({ params, searchParams }: PageProps) {
         family: {
           include: { brand: true },
         },
+        images: {
+          where: { isPrimary: true },
+          take: 1,
+        },
       },
       orderBy: {
         year: "desc",

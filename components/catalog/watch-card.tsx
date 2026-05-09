@@ -2,22 +2,37 @@ import { Link } from "@/i18n/routing";
 import { formatPrice } from "@/lib/utils";
 import { Watch } from "lucide-react";
 import { Prisma } from "@prisma/client";
+import { CldImage } from "next-cloudinary";
 
 // Define the type we expect based on the query we'll make
 type WatchCardProps = {
   watch: Prisma.WatchReferenceGetPayload<{
-    include: { family: { include: { brand: true } } };
+    include: { 
+      family: { include: { brand: true } };
+      images: true; 
+    };
   }>;
 };
 
 export function WatchCard({ watch }: WatchCardProps) {
+  const primaryImage = watch.images && watch.images.length > 0 ? watch.images[0].url : null;
+
   return (
     <Link href={`/catalog/${watch.slug}`} className="group block h-full">
       <div className="flex flex-col h-full overflow-hidden rounded-2xl bg-card transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
         {/* Aspect ratio container for the image */}
         <div className="relative aspect-[4/3] bg-secondary/30 flex items-center justify-center p-8 transition-colors group-hover:bg-secondary/50">
-          {/* Placeholder image icon */}
-          <Watch className="h-16 w-16 text-muted-foreground/40 transition-transform duration-500 group-hover:scale-110" strokeWidth={1} />
+          {primaryImage ? (
+            <CldImage
+              src={primaryImage}
+              alt={watch.name}
+              fill
+              className="object-contain p-4 mix-blend-multiply dark:mix-blend-normal transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
+            <Watch className="h-16 w-16 text-muted-foreground/40 transition-transform duration-500 group-hover:scale-110" strokeWidth={1} />
+          )}
           
           {/* Badges / Overlay */}
           <div className="absolute top-4 left-4 flex gap-2">

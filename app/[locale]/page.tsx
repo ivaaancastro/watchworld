@@ -19,6 +19,10 @@ export default async function HomePage() {
           brand: true,
         },
       },
+      images: {
+        where: { isPrimary: true },
+        take: 1,
+      },
     },
   });
 
